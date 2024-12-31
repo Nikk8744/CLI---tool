@@ -7,7 +7,12 @@
 
 - for setting options
 - for setting command
+- for setting actions
 
 ## 2. zlib
 
-For file compression
+For file compression and decompression
+- gunzip() - for decompression
+- gzip() - for compression
+
+## 3. Voca - string manipulation
