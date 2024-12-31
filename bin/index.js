@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const { program } = require('commander');
-const {compressFile, decompressFile} = require('./compress')
+const {compressFile, decompressFile} = require('./compress');
+const weatherapi = require('./apiIntegration');
 
 
 program 
@@ -10,6 +11,7 @@ program
         console.log("This is a node cli tool")
         console.log("to compress use -> compress")
         console.log("to decompress use -> decompress")
+        console.log("to see weather -> weather <city_name>")
     })
 
 
@@ -38,7 +40,15 @@ program
         console.log("File decompressed successfully")
     });
 
-// 
+// weather api
+
+program
+    .command("weather <city>")
+    .description("The weather of certain city")
+    .option('-t, --temp', "Weather of City")
+    .action((city) => [
+        weatherapi(city)
+    ])
 
 program.parse(process.argv);
 

@@ -16,3 +16,7 @@ For file compression and decompression
 - gzip() - for compression
 
 ## 3. Voca - string manipulation
+
+## 4. Weather - API Integration
+- axios for api fetching
+- it shows the temp, humidity of the entered city.
