@@ -16,7 +16,19 @@ For file compression and decompression
 - gzip() - for compression
 
 ## 3. Voca - string manipulation
+- UPPERCASE
+- LOWERCASE
+- PALINDROME
+- TOTAL WORD COUNT
+
 
 ## 4. Weather - API Integration
 - axios for api fetching
 - it shows the temp, humidity of the entered city.
+
+# How to Use in CLI
+ 1. type -> clitool show
+ 2. type -> clitool show
+ 3. type -> clitool compress or decompress
+ 4. type -> clitool weather city_name
+ 5. types -> clitool strMap "string"

@@ -1,5 +1,6 @@
 const zlib = require('zlib');
 const fs = require('fs');
+const {default: chalk} = require('chalk');
 
 const compressFile = () => {
     const gzip = zlib.createGzip();
@@ -9,16 +10,16 @@ const compressFile = () => {
     inp.pipe(gzip).pipe(out) 
 
     inp.on('error', (err) => {
-        console.log(`Error reading inpur file`, err)
+        console.log(chalk.red(`Error reading inpur file`, err))
     })
 
     out.on('error', (err) => {
-        console.log(`Error writing output file, ${err}`)
+        console.log(chalk.red(`Error writing output file, ${err}`))
     })
 
 
     out.on("finish", () => {
-        console.log(`File compressed Successfully and saved as newfile.txt.gz`)
+        console.log(chalk.green(`File compressed Successfully and saved as newfile.txt.gz`))
     })
 }
 
@@ -30,15 +31,15 @@ const decompressFile = () => {
     inp.pipe(gunzip).pipe(out)
 
     inp.on('error', (err) => {
-        console.error('Error reading the input file:', err);
+        console.error(chalk.red('Error reading the input file:', err));
     });
     
     out.on('error', (err) => {
-        console.error('Error writing to the output file:', err);
+        console.error(chalk.red('Error writing to the output file:', err));
     });
     
     out.on('finish', () => {
-        console.log('File decompressed successfully!');
+        console.log(chalk.green('File decompressed successfully!'));
     });
 }
 
